@@ -50,6 +50,6 @@ public class Rational {
 	}
 	
 	public String toString() {
-		return String.format("%s/%s", numerator, denominator);
+		return numerator + "/" + denominator;
 	}
 }

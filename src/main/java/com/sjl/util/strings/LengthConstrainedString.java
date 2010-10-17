@@ -9,12 +9,12 @@ public class LengthConstrainedString {
 			throw new IllegalArgumentException("String must not be null!");
 		
 		if (aString.length() >= aMaxLength) {
-			String _msg = String.format("String \"%s\" exceeds max-length of %s characters.", aString, aMaxLength);
+			String _msg = "'" + aString + "' exceeds max-length of " + aMaxLength + " characters.";
 			throw new IllegalArgumentException(_msg);
 		}
 		
 		if (aString.length() < aMinLength) {
-			String _msg = String.format("String \"%s\" does not satisfy minimum-length of %s characters.", aString, aMinLength);
+			String _msg = "'" + aString + " does not satisfy minimum-length of " + aMinLength + " characters.";
 			throw new IllegalArgumentException(_msg);
 		}
 		

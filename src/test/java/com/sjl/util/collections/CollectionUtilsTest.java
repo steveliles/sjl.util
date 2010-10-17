@@ -9,8 +9,6 @@ import java.util.*;
 
 import org.junit.*;
 
-import com.sjl.util.strings.*;
-
 public class CollectionUtilsTest {
 
 	@Test
@@ -78,19 +76,4 @@ public class CollectionUtilsTest {
 		assertEquals(_s2, _s3);
 	}
 	
-	@Test
-	public void testAllowsSetPopulationByStringCapture() {		
-		Set<String> _s1 = Strings.captureAsSet("steve is cool", "(\\S*) (\\S*) (\\S*)");
-		assertTrue(_s1.contains("steve"));
-		assertTrue(_s1.contains("is"));
-		assertTrue(_s1.contains("cool"));
-	}
-	
-	@Test
-	public void testAllowsSetPopulationByStringSplit() {		
-		Set<String> _s1 = Strings.splitAsSet("steve is cool", "\\s+");
-		assertTrue(_s1.contains("steve"));
-		assertTrue(_s1.contains("is"));
-		assertTrue(_s1.contains("cool"));
-	}
 }

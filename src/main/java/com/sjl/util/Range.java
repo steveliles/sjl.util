@@ -59,7 +59,7 @@ public class Range {
     }
     
     public String toString() {
-        return String.format("%s to %s of %s", (start+1), (Math.min(getEnd()+1, total)), total);
+        return (start+1) + " to " + (Math.min(getEnd()+1, total)) + " of " + total;
     }
     
     public int hashCode() {

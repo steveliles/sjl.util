@@ -14,14 +14,15 @@ public class Utils {
 		}
 		return null;
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	public static <T> T[] compact(T... aTs) {
 		if (isEmpty(aTs)) 
 			return aTs;
 		
 		FuncList<T> _list = Lists.newList(aTs).compact();
 		
-		return _list.toArray(Arrays.copyOf(aTs, _list.size()));
+		return (T[]) _list.toArray();
 	}
 	
 	public static <T> boolean containsAnyNulls(T... aTs) {
@@ -43,15 +44,17 @@ public class Utils {
 		return ((anArray == null) || (anArray.length == 0));
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static <T> T[] splice(T[] anArray, T... anElements) {
 		if (anElements.length == 0)
 			return anArray;		
 		if (anArray.length == 0)
 			return anElements;
 		
-		T[] _new = Arrays.copyOf(anArray, anArray.length+anElements.length);
-		System.arraycopy(anElements, 0, _new, anArray.length+1, anElements.length);
-		return _new;
+		List<T> _list = Lists.newList(anArray);
+		_list.addAll(Lists.newList(anElements));
+		
+		return (T[]) _list.toArray();
 	}
 	
 	public static String firstNonEmpty(String... aStrings) {
