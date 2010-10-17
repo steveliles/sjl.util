@@ -3,34 +3,33 @@ package com.sjl.util.dates;
 import java.text.*;
 import java.util.*;
 
-import com.sjl.util.*;
-import com.sjl.util.cache.*;
-
 public class Dates {
 
 	public static String ISO_8601_WITH_TIME = "yyyyMMdd'T'HHmmss";
 
-	private static ThreadLocal<Calendar> CALENDAR_CACHE = new ThreadLocal<Calendar>() {
-		@Override
-		protected Calendar initialValue() {
-			return Calendar.getInstance();
-		}
-	};
-
-	private static ThreadLocalCache<String, DateFormat> DATEFORMAT_CACHE = new ThreadLocalCache<String, DateFormat>(
-		new ValueFactory<String, DateFormat>() {
-			@Override
-			public DateFormat create(String aKey) {
-				return new SimpleDateFormat(aKey);
-			}
-		});
+// TODO - cook up a way to make this work neatly in both normal java and gwt	
+	
+//	private static ThreadLocal<Calendar> CALENDAR_CACHE = new ThreadLocal<Calendar>() {
+//		@Override
+//		protected Calendar initialValue() {
+//			return Calendar.getInstance();
+//		}
+//	};
+//
+//	private static ThreadLocalCache<String, DateFormat> DATEFORMAT_CACHE = new ThreadLocalCache<String, DateFormat>(
+//		new ValueFactory<String, DateFormat>() {
+//			@Override
+//			public DateFormat create(String aKey) {
+//				return new SimpleDateFormat(aKey);
+//			}
+//		});
 
 	public static Calendar getCalendar() {
-		return CALENDAR_CACHE.get();
+		return Calendar.getInstance();
 	}
 
 	public static DateFormat getDateFormat(String aDateFormat) {
-		return DATEFORMAT_CACHE.retrieve(aDateFormat);
+		return new SimpleDateFormat(aDateFormat);
 	}
 
 	public static String format(Date aDate, String aDateFormat) {

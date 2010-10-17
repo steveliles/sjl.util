@@ -1,4 +1,4 @@
-package com.sjl.util.files;
+package com.sjl.util;
 
 import static org.junit.Assert.*;
 

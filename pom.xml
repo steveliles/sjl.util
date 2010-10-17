@@ -92,6 +92,12 @@
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.sjl</groupId>
+      <artifactId>sjl.testing</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>test</scope>      
+    </dependency>
     
     <dependency>
       <groupId>org.jmock</groupId>

@@ -6,10 +6,11 @@ import java.util.regex.*;
 
 import org.junit.*;
 
+import com.sjl.testing.*;
+import com.sjl.testing.ThroughputComparison.Throughput;
+import com.sjl.testing.ThroughputComparison.Worker;
 import com.sjl.util.*;
 import com.sjl.util.collections.*;
-import com.sjl.util.testing.*;
-import com.sjl.util.testing.ThroughputComparison.*;
 
 public class StringsTest {
 

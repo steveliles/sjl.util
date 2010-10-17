@@ -8,12 +8,14 @@ import com.sjl.util.collections.*;
 
 public class Strings {
 
-	private static ThreadLocal<PatternCache> PATTERN_CACHE = new ThreadLocal<PatternCache>() {
-		@Override
-		protected PatternCache initialValue() {
-			return new PatternCache();
-		}		
-	};
+// TODO: cook up a neat way to do this that works nicely for normal java AND gwt	
+	
+//	private static ThreadLocal<PatternCache> PATTERN_CACHE = new ThreadLocal<PatternCache>() {
+//		@Override
+//		protected PatternCache initialValue() {
+//			return new PatternCache();
+//		}		
+//	};
 	
 	public static String nullToString(String aString) {
 		return (aString == null) ? "" : aString; 
@@ -92,7 +94,8 @@ public class Strings {
 	}
 	
 	public static Pattern getCachedPattern(String aRegex, int aFlags) { 
-		return PATTERN_CACHE.get().get(aRegex, aFlags);
+		//return PATTERN_CACHE.get().get(aRegex, aFlags);
+		return Pattern.compile(aRegex, aFlags);
 	}
 	
 	public static FuncSet<String> splitAsSet(String aString, String aRegex) {

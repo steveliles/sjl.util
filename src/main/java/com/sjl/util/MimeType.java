@@ -1,8 +1,7 @@
-package com.sjl.util.files;
+package com.sjl.util;
 
 import java.util.*;
 
-import com.sjl.util.*;
 import com.sjl.util.collections.*;
 
 public class MimeType {
