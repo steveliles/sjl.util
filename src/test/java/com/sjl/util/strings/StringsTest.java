@@ -41,7 +41,8 @@ public class StringsTest {
 		assertEquals("steve", Strings.firstNonEmpty("", "steve", ""));
 	}
 	
-	@Test
+
+	//@Test
 	public void providesFasterRepeatIterationsOfMatches()
 	throws Exception {		
 		
